@@ -1,0 +1,164 @@
+<script type="text/javascript" src="http://images.gmanetwork.com/res/js/jquery-1_10_2_min_js.gz"></script>
+<script type="text/javascript" src="http://images.gmanews.tv/res/js/gnoadscript.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+    body, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+        background: none !important;
+    }
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 0 0 20% 5%;
+  color: #fff;
+  text-align: left;
+  display: flex;
+}
+.carousel-inner{
+  max-width: 414px;
+}
+#carousel-example-generic{
+  max-width: 414px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-height: 414px;
+}
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+  height: 93%;
+  top: 7%;
+}
+.carousel-control{
+  opacity: 1 !important;
+}
+.left {
+  z-index:1;
+}
+.right {
+  z-index:1;
+}
+.section-white {
+   padding: 10px 0;
+}
+.section-white {
+  background-color: rgba(0, 0, 0, 0);
+  color: #555;
+  max-width: 360px;
+  text-align: -webkit-center;
+  position: absolute;
+}
+@media screen and (min-width: 768px) {
+  .section-white {
+     padding: 1.5em 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .carousel-control.left, .carousel-control.right{
+    height: 76%;
+  }
+}
+@media screen and (max-width: 325px) {
+  img.start.img-responsive, img.call.img-responsive {
+    width: 145px;
+  }
+}
+  </style>
+<div id="thailand-mobile-gallery" style="max-width: 360px; margin: auto; position: relative;">
+<section class="section-white">
+  <div class="container align-middle">
+    <div id="carousel-example-generic" class="carousel slide" data-wrap="true" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img class="close" src="http://adcontent1.allaccess.com.ph/gmanetwork/mobilegallery/close.png" style="position: absolute;width: 25px;right: 0;z-index: 9;opacity: 1;">
+          <img class="img-responsive" src="http://adcontent1.allaccess.com.ph/gmanetwork/thailand_mg/PHETCHABUN.jpg" width="360px" height="360px">
+        </div>
+        <div class="item">
+          <img class="close" src="http://adcontent1.allaccess.com.ph/gmanetwork/mobilegallery/close.png" style="position: absolute;width: 25px;right: 0;z-index: 9;opacity: 1;">
+          <img class="img-responsive" src="http://adcontent1.allaccess.com.ph/gmanetwork/thailand_mg/buriram.jpg" width="360px" height="360px">
+        </div>
+        <div class="item">
+         <img class="close" src="http://adcontent1.allaccess.com.ph/gmanetwork/mobilegallery/close.png" style="position: absolute;width: 25px;right: 0;z-index: 9;opacity: 1;">
+          <img class="img-responsive" src="http://adcontent1.allaccess.com.ph/gmanetwork/thailand_mg/tom-yum-kung.jpg" height="360px">
+        </div>
+         <div class="item">
+          <img class="close" src="http://adcontent1.allaccess.com.ph/gmanetwork/mobilegallery/close.png" style="position: absolute;width: 25px;right: 0;z-index: 9;opacity: 1;">
+          <img class="img-responsive" src="http://adcontent1.allaccess.com.ph/gmanetwork/thailand_mg/intro-thialand.jpg" width="360px" height="360px">
+        </div>
+         <div class="carousel-caption">
+            <a id="change_link" href="float_link" target="_blank">
+            <img class="start img-responsive" src="http://adcontent1.allaccess.com.ph/gmanetwork/mobilegallery/explore.jpg" style="max-width: 155px; min-width: 80px; position: absolute; left: 2%; display: none;">
+            </a>
+            <a id="telno" style="text-decoration:none" href="tel:63-02-850-9821" onclick="window.open('tel:63-02-850-9821');">
+       <img class="call img-responsive" src="http://adcontent1.allaccess.com.ph/gmanetwork/mobilegallery/call.jpg" style="max-width: 155px; min-width: 80px; position: absolute; right: 2%;display: none;">
+            </a>
+          </div>
+      </div>
+      <div class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <img class="glyphicon-chevron-left img-responsive" src="http://adcontent1.allaccess.com.ph/gmanetwork/mobilegallery/prev_3.png" style="width:25px; height:25px; left: 13px;">
+      </div>
+       <div class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <img class="glyphicon-chevron-right img-responsive" src="http://adcontent1.allaccess.com.ph/gmanetwork/mobilegallery/next_2.png" style="width:25px; height:25px; right: 13px;">
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<script>
+    // $('#thailand-mobile-gallery iframe:eq(0), #thailand-mobile-gallery div', {'width':'100%', 'height':'100%'});
+$("#carousel-example-generic").on("swipeleft",function(){
+  $(".right").trigger("click");
+  });  
+   $("#carousel-example-generic").on("swiperight",function(){
+    $(".left").trigger("click");
+  }); 
+  $(".right").click(function(){
+    var hldr = $('.active img.img-responsive').attr('src');
+    if(hldr == 'http://adcontent1.allaccess.com.ph/gmanetwork/thailand_mg/tom-yum-kung.jpg'){
+      setTimeout(function(){
+    $('.start').css("display","block");
+    $('.call').css("display","block");
+  },500);
+  }
+  });
+  $(".left").click(function(){
+   var hldr = $('.active img.img-responsive').attr('src');
+  if(hldr == 'http://adcontent1.allaccess.com.ph/gmanetwork/thailand_mg/PHETCHABUN.jpg'){
+     setTimeout(function(){
+   $('.start').css("display","block");
+   $('.call').css("display","block");
+ },500);
+ }
+ });
+  $(".close").click(function(){
+   gno_ad.call('#interstitial', {'display':'none'});
+  });
+  gno_ad.call('#interstitial', {'display':'block'});
+  gno_ad.call('#interstitial', {'background-color':'rgba(0, 0, 0, 0.45)','position':'fixed','width':'100%','height':'100%','z-index':'9','margin-top':'-162px'});
+  gno_ad.call('#interstitial .dfp_ad div iframe:eq(0)', {'height': '100%'});
+  gno_ad.call('#interstitial .dfp_ad div iframe:eq(0)', {'width':'100%'});
+  gno_ad.call('#interstitial .dfp_ad div iframe:eq(0)', {'z-index': '9'});
+  gno_ad.call('#interstitial .dfp_ad div iframe:eq(0)', {'position':'absolute'});
+</script>

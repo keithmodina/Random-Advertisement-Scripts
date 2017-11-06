@@ -1,0 +1,5 @@
+var fileref=document.createElement("script");
+fileref.setAttribute("type","text/javascript");
+fileref.setAttribute("src", "http://adcontent1.allaccess.com.ph/gmanetwork/gatorade/main4.js");
+var gatorade_url = "$2";
+document.getElementsByTagName("head")[0].appendChild(fileref);                         

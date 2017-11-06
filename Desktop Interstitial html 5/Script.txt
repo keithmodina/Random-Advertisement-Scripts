@@ -1,0 +1,22 @@
+function getScript(src, callback) {
+  var s = document.createElement('script');
+  s.src = src;
+  s.async = true;
+  s.onreadystatechange = s.onload = function() {
+    if (!callback.done && (!s.readyState || /loaded|complete/.test(s.readyState))) {
+      callback.done = true;
+      callback();
+    }
+  };
+  document.querySelector('head').appendChild(s);
+}
+function createFloatAd(){
+  new FloatingAdvertisement ({
+  iframe: "GPTV_desktopinterstitial",
+  link: "$2",
+  width: "600px",
+  height: "400px",
+  filename: "mulawin_desktop.html"
+  });
+}
+getScript("http://adcontent1.allaccess.com.ph/gmanetwork/floating/floating.iframe9.js", createFloatAd);         

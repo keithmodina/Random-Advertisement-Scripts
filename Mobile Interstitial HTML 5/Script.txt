@@ -1,0 +1,27 @@
+function getScript(src, callback) {
+  var s = document.createElement("script");
+  s.src = src;
+  s.async = true;
+  s.onreadystatechange = s.onload = function() {
+    if (!callback.done && (!s.readyState || /loaded|complete/.test(s.readyState))) {
+      callback.done = true;
+      callback();
+    }
+  };
+  document.querySelector('head').appendChild(s);
+}
+          var w = window.innerWidth          || document.documentElement.clientWidth          || document.body.clientWidth;
+          var h = window.height
+          || document.documentElement.clientHeight
+          || document.body.clientHeight;
+function createFloatAd(){
+  new FloatingAdvertisement ({
+  iframe: "IFlix",
+  link: "$2",
+  width: (w>h ? (h*640/888) : w)+"px",
+  height: (h>w ? h:h)-40 +"px",
+  filename: "iflix_mobile8.html",
+  top: "0"
+  });
+}
+getScript("http://adcontent1.allaccess.com.ph/gmanetwork/floating/floating.iflix.js", createFloatAd);          

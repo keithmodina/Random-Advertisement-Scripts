@@ -1,0 +1,79 @@
+<script type="text/javascript" src="http://images.gmanetwork.com/res/js/jquery-1_10_2_min_js.gz"></script>
+<script type="text/javascript" src="http://images.gmanews.tv/res/js/gnoadscript.js"></script>
+
+<style>
+div.ad-footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+}
+#ad-footer-background, #ad-footer-collapse{
+    display: none;
+    margin: 0 auto;
+    position: relative;
+    </style>  
+
+        <div class="ad-footer">
+            <img id="ad-footer-float" src="http://adcontent1.allaccess.com.ph/gmanetwork/gatorade/1020x30_EBA_float.jpg" alt=""/>
+                <div id="ad-footer-background" style="background-image: url(http://adcontent1.allaccess.com.ph/gmanetwork/gatorade/gatorade_background.jpg); width: 1020px; height: 360px;">
+
+                    <div style="margin: auto;top: 0px;bottom: 0px;left: 30px;width: 45%;height: 300px;z-index: 9;"></div>
+                    <div id="iframe_container"></div>
+                     <a href="'+gatorade_url+'" target="_blank">
+                    <video poster="" style="position: absolute; width: 45%; height: 250px; margin: auto; top: 0; bottom: 0; right: 30px;">
+                        <source src="http://adcontent1.allaccess.com.ph/gmanetwork/gatorade/gatorade_expandable_boarder_animation.mp4"/>
+                    </video>
+                     </a>
+                </div>
+            <img id="ad-footer-collapse" src="http://adcontent1.allaccess.com.ph/gmanetwork/gatorade/1020x30_collapse_EBA.jpg" alt=""/>
+        </div>
+
+    <script type="text/javascript">
+                var footerAd = function(){
+                    var _this = this;
+                    this.adFooter = $('div.ad-footer');
+                    this.handlers = {
+                        mouseenter: function(){
+                            gno_ad.call('#interstitial .dfp_ad div iframe:eq(0)', {'height': '380px'});
+                            _this.adFooter.find('#ad-footer-collapse').hide();
+                            _this.adFooter.find('#ad-footer-float').slideUp('fast');
+                            var background = _this.adFooter.find('#ad-footer-background');
+                            background.slideDown('fast');
+                            background.find('video').get(0).muted = false;
+                            background.find('video').get(0).play();
+                            _this.adFooter.find('#iframe_container').html('<iframe volume="0" src="https://www.youtube.com/embed/rleP_gEv_wQ?autoplay=1&fs=0&loop=1&mute=1&playlist=rleP_gEv_wQ" frameborder="0" allowfullscreen="false" style="position: absolute; margin: auto; top: 0px; bottom: 0px; left: 30px; width: 45%; height: 300px;"></iframe>');
+                        },
+                        mouseleave: function(){
+                            gno_ad.call('#interstitial .dfp_ad div iframe:eq(0)', {'height': '36px'});
+                            var background = _this.adFooter.find('#ad-footer-background');
+                            background.slideUp('fast');
+                            background.find('video').get(0).muted = true;
+                            background.find('video').get(0).pause();
+                            background.find('video').get(0).currentTime = 0;
+                            background.find('video').get(0).load();
+                            _this.adFooter.find('#ad-footer-collapse').slideDown('fast');
+                            _this.adFooter.find('#iframe_container').html('');
+                        }
+                    }
+                    this.main = {
+                        init: function(){
+                            _this.adFooter.find('#ad-footer-float, #ad-footer-collapse').bind(
+                                {'mouseenter': _this.handlers.mouseenter});
+                            _this.adFooter.find('#ad-footer-background').bind(
+                                'mouseleave', _this.handlers.mouseleave);
+                        }
+                    }
+                }
+                var footerAd_instance = new footerAd();
+                footerAd_instance.main.init(); 
+
+    gno_ad.call('#interstitial', {'display':'block'});
+    gno_ad.call('#interstitial .dfp_ad div iframe:eq(0)', {'height': '36px'});
+    gno_ad.call('#interstitial .dfp_ad div iframe:eq(0)', {'width':'100%'});
+    gno_ad.call('#interstitial .dfp_ad div', {'width':'100%','height':'100%'});
+    gno_ad.call('#interstitial', {'position':'fixed','bottom':'-4px','width':'100%','z-index':'20'});
+
+    //hindi latest to hingi ka bagong script 
+</script>

@@ -1,0 +1,26 @@
+var paramThailand = {};
+
+function getScript(src, callback) {
+  var s = document.createElement('script');
+  s.src = src;
+  s.async = true;
+  s.onreadystatechange = s.onload = function() {
+    if (!callback.done && (!s.readyState || /loaded|complete/.test(s.readyState))) {
+      callback.done = true;
+      callback();
+    }
+  };
+  document.querySelector('head').appendChild(s);
+}
+function createFloatAd(){
+  /*new FloatingAdvertisement ({
+  iframe: "creamydelight",
+  link: "$2",
+  width: "600px",
+  height: "400px",
+  filename: "creamydelightdesktop.html"
+  });*/
+  paramThailand.link = "$2";
+
+}
+getScript("http://adcontent1.allaccess.com.ph/gmanetwork/floating/floating_thailand_gallery12.js", createFloatAd);         

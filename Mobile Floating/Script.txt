@@ -1,0 +1,20 @@
+function getScript(src, callback) {
+  var s = document.createElement('script');
+  s.src = src;
+  s.async = true;
+  s.onreadystatechange = s.onload = function() {
+    if (!callback.done && (!s.readyState || /loaded|complete/.test(s.readyState))) {
+      callback.done = true;
+      callback();
+    }
+  };
+  document.querySelector('head').appendChild(s);
+}
+function createRoadblockAd(){
+  new RoadblockAdvertisement ({
+  portrait: "http://adcontent1.allaccess.com.ph/gmanetwork/gotdeals/Week1-ad1.jpg",
+  landscape: "http://adcontent1.allaccess.com.ph/gmanetwork/gotdeals/Week1-ad1.jpg",
+  link: "$2",
+  });
+}
+getScript("http://adcontent1.allaccess.com.ph/gmanetwork/roadblock/roadblock.js", createRoadblockAd);      
